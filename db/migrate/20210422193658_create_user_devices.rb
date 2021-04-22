@@ -4,6 +4,8 @@ class CreateUserDevices < ActiveRecord::Migration[6.1]
       t.string :location
       t.boolean :indoor
       t.boolean :outdoor
+      t.integer :quantity
+      
       t.integer :user_id
       t.integer :device_id
 

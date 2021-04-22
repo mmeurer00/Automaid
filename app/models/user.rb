@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :automations
-  has_many :devices
-  has_many :devices, through: :device_users
+  has_many :user_devices
+  has_many :automations, through: :user_devices
+  has_many :devices, through: :user_devices
 
   validates :name, :email, :password, presence: true
   validates :email, uniqueness: true

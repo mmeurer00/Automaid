@@ -5,7 +5,6 @@ class CreateDevices < ActiveRecord::Migration[6.1]
       t.string :brand
       t.string :type
       t.string :description
-      t.integer :user_id
 
       t.timestamps
     end
