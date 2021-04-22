@@ -1,0 +1,3 @@
+class AutomationsController < ApplicationController
+
+end

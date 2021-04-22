@@ -1,0 +1,3 @@
+class UserDevices < ApplicationController
+
+end
