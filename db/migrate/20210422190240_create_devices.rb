@@ -4,10 +4,8 @@ class CreateDevices < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :brand
       t.string :type
-      t.string :rooom
-      t.boolean :indoor
       t.string :description
-      t.integer :quantity
+      t.integer :user_id
 
       t.timestamps
     end
