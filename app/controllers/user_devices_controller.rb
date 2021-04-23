@@ -1,4 +1,4 @@
-class UserDevices < ApplicationController
+class UserDevicesController < ApplicationController
     def index
     end
 
