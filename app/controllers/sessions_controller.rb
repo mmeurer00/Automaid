@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-
+    
+    #Logging in
     def new
     end
 
@@ -15,10 +16,15 @@ class SessionsController < ApplicationController
             render :new
         end
     end
-
+    
+    #Logging out
     def logout
-        session.clear
-        redirect_to login_path
+        if logged_in?
+            session[:user_id] = []
+            redirect_to login_path
+        else
+            redirect_to user_devices_path
+        end
     end
 
 
