@@ -7,7 +7,7 @@ class AutomationsController < ApplicationController
     def create
         @automation = Automation.new(automation_params)
         binding.pry
-        if @automation.save
+        if @automation.save!
             binding.pry 
             redirect_to automations_path
         else
