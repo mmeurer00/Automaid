@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   
   get '/logout', to: 'sessions#logout'
 
+  get '/automations/new', to: 'automations#new'
+  post '/automations/create', to: 'automations#create'
+
   resources :devices, :user_devices, :automations, :users
   
 end
