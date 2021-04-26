@@ -2,7 +2,7 @@ class UserDevicesController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     
     def index
-        @user_devices = UserDevice.all
+            @user_devices = UserDevice.all
     end
 
     def show
@@ -15,8 +15,8 @@ class UserDevicesController < ApplicationController
 
     def create
         @user_device = UserDevice.new(user_device_params)
-        if @user_device.save!
-            redirect_to user_devices_path
+        if @user_device.save
+            redirect_to user_device_path(@user_device)
         else
             render :new
         end

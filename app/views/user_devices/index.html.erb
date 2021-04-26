@@ -1,3 +1,6 @@
-<h1> User Devices Index </h1>
+<h1> Rooms </h1>
 <p> hello <%= current_user.name %> </p>
-<li><%= @user_device_id  %> </li>
+<% @user_devices.each do |user_device| %>
+    <%= user_device.location%>
+    <br>
+    <% end%>

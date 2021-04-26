@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   root('static#home')
 
+  resources :users, only: [:show] do
+    resources :user_devices, only: [:show, :index]
+  end
+  
   resources :devices, :user_devices, :automations, :users
   
 end
