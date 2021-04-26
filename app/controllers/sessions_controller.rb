@@ -5,20 +5,19 @@ class SessionsController < ApplicationController
     end
 
     def create
-        if user = User.find_by!(email: user_params[:email])
-            if !!user && user.authenticate(user_params[:password])
-                session[:user_id] = @user_id
+        @user = User.find_by(params[:email])
+        #binding.pry
+            if !!@user && @user.authenticate(params[:user][:password])
+                session[:user_id] = @user.id
                 redirect_to user_devices_path
             else
                 render :new
             end
-        else 
-            render :new
-        end
     end
     
     #Logging out
     def logout
+
         if logged_in?
             session[:user_id] = []
             redirect_to login_path

@@ -5,6 +5,7 @@ class CreateAutomations < ActiveRecord::Migration[6.1]
       t.text :if_action
       t.text :then_action
       t.integer :user_device_id
+
      
 
       t.timestamps
