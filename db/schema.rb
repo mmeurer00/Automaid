@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_04_22_193658) do
     t.string "brand"
     t.string "type"
     t.string "description"
+    t.integer "user_device_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -45,7 +45,7 @@ class DevicesController < ApplicationController
     private
 
     def device_params
-        params.require(:device).permit(:name, :brand, :type, :description)
+        params.require(:device).permit(:name, :brand, :type, :description, :user_device_id)
     end
 
 end

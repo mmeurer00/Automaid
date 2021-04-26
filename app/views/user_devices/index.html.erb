@@ -1,6 +1,6 @@
 <h1> Rooms </h1>
 <p> hello <%= current_user.name %> </p>
 <% @user_devices.each do |user_device| %>
-    <%= user_device.location%>
+    <%= link_to user_device.location, user_device_path(user_device)%>
     <br>
     <% end%>

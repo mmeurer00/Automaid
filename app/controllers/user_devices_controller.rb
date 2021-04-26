@@ -2,7 +2,7 @@ class UserDevicesController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     
     def index
-            @user_devices = UserDevice.all
+        @user_devices = UserDevice.all
     end
 
     def show
@@ -45,7 +45,7 @@ class UserDevicesController < ApplicationController
     private
 
     def user_device_params
-        params.require(:user_device).permit(:location, :indoor, :outdoor, :quantity, :user_id, :device_id)
+        params.require(:user_device).permit(:location, :indoor, :outdoor, :quantity, :user_id)
     end
 
 end
