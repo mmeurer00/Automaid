@@ -38,7 +38,7 @@ class AutomationsController < ApplicationController
 
     def destroy
         @automation = Automation.find(params[:id])
-        @autoatmion.destroy
+        @automation.destroy
         redirect_to automations_path
     end
 

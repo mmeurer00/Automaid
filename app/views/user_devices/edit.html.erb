@@ -1,0 +1,15 @@
+<%= form_for(@user_device) do |f| %>
+    <%= f.label :location %>
+    <%= f.text_field :location %><br>
+    <%= f.label :indoor %>
+    <%= f.check_box :indoor, {}, true, false %> <br>
+    <%= f.label :outdoor %>
+    <%= f.check_box :outdoor, {}, true, false %> <br>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %><br>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %><br>
+    <%= f.label :device_id %>
+    <%= f.text_field :device_id %><br>
+    <%= f.submit 'Create User Device' %>
+<% end %>

@@ -1,0 +1,14 @@
+<h1>Edit Automation</h1>
+<%= form_with(model: @automation) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :if_action %>
+    <%= f.text_field :if_action %><br>
+    <%= f.label :then_action %>
+    <%= f.text_field :then_action %><br>
+    <%= f.label :user_device_id%>
+    <%= f.text_field :user_device_id %><br><br>
+    <%= f.submit 'Update Automation' %>
+<% end %>
+<br>
+<%= button_to "DELETE AUTOMATION", automation_path(@automation), method: "delete" %>

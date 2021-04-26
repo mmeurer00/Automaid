@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   
   get '/logout', to: 'sessions#logout'
+  delete '/logout', to: 'sessions#logout'
 
   get '/automations/new', to: 'automations#new'
   post '/automations/create', to: 'automations#create'
