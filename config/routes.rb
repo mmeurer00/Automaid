@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/automations/new', to: 'automations#new'
   post '/automations/create', to: 'automations#create'
 
+  root('static#home')
+
   resources :devices, :user_devices, :automations, :users
   
 end
