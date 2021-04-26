@@ -1,1 +1,7 @@
 <h1>Automations</h1>
+
+<li><%= link_to(@automation.name, automation_path(@automation)) %>
+<ul> <%= @automation.if_action %> <br>
+<%= @automation.then_action %> 
+</ul>
+</li>
