@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
 
     def new
         @room = Room.new
-        @user = current_user
+       @user = current_user
     end
 
     def create

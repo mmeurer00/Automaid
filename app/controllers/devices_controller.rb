@@ -1,5 +1,5 @@
 class DevicesController < ApplicationController
-    
+    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     def index
         @devices = Device.all
     end

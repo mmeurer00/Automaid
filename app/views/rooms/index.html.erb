@@ -4,3 +4,5 @@
     <%= link_to room.name, room_path(room)%>
     <br>
     <% end%>
+
+    <%= button_to 'LOGOUT', logout_path, class: 'nav-link active', method: 'delete' %>

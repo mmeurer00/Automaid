@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :devices do
     resources :automations
   end
+
+  resources :users do
+    resources :rooms
+  end
   
-  resources :devices, :rooms, :users
+  resources :devices, :users, :rooms, :automations
   
 end

@@ -1,16 +1,15 @@
 class AutomationsController < ApplicationController
-#must create user_device_id_controller before this works
+    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     def new
         @automation = Automation.new
         @device = Device.find_by(id: params[:id])
-        
     end
 
     def create
-        @device = Device.find_by(id: params[:id])
         @automation = Automation.new(automation_params)
+        @automation.device = Device.find_by(id: params[:device_id])
         if @automation.save! 
-            redirect_to new_device_automation_path
+            redirect_to device_automations_path
         else
             redirect_to new_device_automation_path
         end
@@ -33,7 +32,7 @@ class AutomationsController < ApplicationController
         @automation.update(automation_params)
 
         if @automation.valid?
-            redirect_to automation_path(@automation)
+            redirect_to edit_device_automation_path(@automation)
         else
             render :edit
         end
@@ -42,12 +41,12 @@ class AutomationsController < ApplicationController
     def destroy
         @automation = Automation.find(params[:id])
         @automation.destroy
-        redirect_to automations_path
+        redirect_to device_automations_path
     end
 
     private
 
     def automation_params
-        params.require(:automation).permit(:name, :if_action, :then_action, :user_device_id, :device_id)
+        params.require(:automation).permit(:name, :if_action, :then_action, :room_name, :device_id)
     end
 end
