@@ -14,10 +14,6 @@ Rails.application.routes.draw do
 
   root('static#home')
 
-  resources :users do
-    resources :rooms, only: [:show, :index, :new, :create]
-  end
-
   resources :devices do
     resources :automations
   end

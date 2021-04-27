@@ -10,11 +10,13 @@ class DevicesController < ApplicationController
 
     def new
         @device = Device.new
+        @user = current_user
     end
 
     def create
         @device = Device.new(device_params)
-        if @device.save
+        @user = current_user
+        if @device.save!
             redirect_to device_path(@device)
         else
             render :new
@@ -45,7 +47,7 @@ class DevicesController < ApplicationController
     private
 
     def device_params
-        params.require(:device).permit(:name, :brand, :type, :description, :user_device_id, :automation_id)
+        params.require(:device).permit(:name, :brand, :type, :model, :description, :quantity, :user_id)
     end
 
 end

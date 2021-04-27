@@ -1,7 +1,6 @@
-<h1> Device Show Page </h1>
 
-<h3> <%= @device.name %> </h3>
-<p> <%= @device.type %> </p>
-<p> <%= @device.brand %> </p>
-<p> <%= link_to @device.room.name room_path(@device.room)%> </p>
-<p> <%= link_to "Automations", device_automations_path(@device)%> </p>%> </p>
+<h1> <%= @device.name %> </h1>
+<p> Model: <%= @device.model %> </p>
+<p> Description: <%= @device.description %> </p>
+<p> Brand: <%= @device.brand %> </p>
+<p> Quantity: <%= @device.quantity %> </p>

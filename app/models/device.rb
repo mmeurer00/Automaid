@@ -1,5 +1,5 @@
 class Device < ApplicationRecord
-    belongs_to :user
+    belongs_to :user, optional: true
     has_many :automations
     has_many :rooms, through: :automations
 
