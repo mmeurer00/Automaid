@@ -2,14 +2,17 @@ class AutomationsController < ApplicationController
 #must create user_device_id_controller before this works
     def new
         @automation = Automation.new
+        @device = Device.find_by(id: params[:id])
+        
     end
 
     def create
+        @device = Device.find_by(id: params[:id])
         @automation = Automation.new(automation_params)
         if @automation.save! 
-            redirect_to automations_path
+            redirect_to new_device_automation_path
         else
-            redirect_to new_automation_path
+            redirect_to new_device_automation_path
         end
     end
 
@@ -45,6 +48,6 @@ class AutomationsController < ApplicationController
     private
 
     def automation_params
-        params.require(:automation).permit(:name, :if_action, :then_action, :user_device_id)
+        params.require(:automation).permit(:name, :if_action, :then_action, :user_device_id, :device_id)
     end
 end

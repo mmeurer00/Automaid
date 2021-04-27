@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to user_devices_path
+            redirect_to rooms_path
         else
             render :new
         end
@@ -21,14 +21,14 @@ class UsersController < ApplicationController
 
     def user_devices_index
         @user = User.find(params[:id])
-        @user_devices = @user.user_devices
-        render template: 'user_devices/index'
+        @rooms = @user.rooms
+        render template: 'room/index'
     end
 
     def user_device
         @user = User.find(params[:id])
         @user_device = UserDevice.find(params[:user_device_id])
-        render template: 'user_devices/show'
+        render template: 'rooms/show'
     end
 
     private

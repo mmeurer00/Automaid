@@ -1,0 +1,10 @@
+<h1> New Room </h1>
+<%= form_for(@room) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :indoor %>
+    <%= f.check_box :indoor, {}, true, false %> <br>
+    <%= f.label :outdoor %>
+    <%= f.check_box :outdoor, {}, true, false %> <br>
+    <%= f.submit 'Create Room' %>
+<% end %>

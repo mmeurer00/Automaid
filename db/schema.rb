@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_193658) do
     t.string "name"
     t.text "if_action"
     t.text "then_action"
-    t.integer "user_device_id"
+    t.integer "room_id"
+    t.integer "device_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,20 +25,19 @@ ActiveRecord::Schema.define(version: 2021_04_22_193658) do
   create_table "devices", force: :cascade do |t|
     t.string "name"
     t.string "brand"
-    t.string "type"
+    t.string "model"
     t.string "description"
-    t.integer "user_device_id"
+    t.string "quantity"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "user_devices", force: :cascade do |t|
-    t.string "location"
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
     t.boolean "indoor"
     t.boolean "outdoor"
-    t.integer "quantity"
     t.integer "user_id"
-    t.integer "device_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         #binding.pry
             if !!@user && @user.authenticate(params[:user][:password])
                 session[:user_id] = @user.id
-                redirect_to user_devices_path
+                redirect_to rooms_path
             else
                 render :new
             end
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
             session[:user_id] = []
             redirect_to login_path
         else
-            redirect_to user_devices_path
+            redirect_to rooms_path
         end
     end
 

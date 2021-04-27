@@ -4,9 +4,9 @@ class CreateAutomations < ActiveRecord::Migration[6.1]
       t.string :name
       t.text :if_action
       t.text :then_action
-      t.integer :user_device_id
-
-     
+      t.integer :room_id
+      t.integer :device_id
+      
 
       t.timestamps
     end
