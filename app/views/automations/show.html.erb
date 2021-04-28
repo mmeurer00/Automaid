@@ -1,7 +1,6 @@
-<h1>Automations</h1>
-
-<li><%= link_to(@automation.name, automation_path(@automation)) %>
-<ul> <%= @automation.if_action %> <br>
-<%= @automation.then_action %> 
+<h1> <%=@automation.name %> </h1>
+<ul> <p> If Action: <%= @automation.if_action %> </p> 
+<p> Then Action: <%= @automation.then_action %> </p>
+<p> Device Name: <%= @automation.device.name %> </p>
 </ul>
-</li>
+<%= link_to 'Back to Automations', device_automations_path %>

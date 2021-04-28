@@ -1,4 +1,8 @@
 <h1> Automations Index </h1>
 <ul>
-<%= render @automations %>
+<% @automations.each do |automation| %>
+    <% next if automation.device_id.nil? %>
+    <h4> <%= link_to automation.name,  device_automation_path(automation.device_id, automation) %> </h4>
+     <br>
+<% end %>
 </ul>

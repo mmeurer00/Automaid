@@ -15,7 +15,7 @@ class DevicesController < ApplicationController
 
     def create
         @device = Device.new(device_params)
-        @user = current_user
+        @device.user = current_user
         if @device.save!
             redirect_to device_path(@device)
         else

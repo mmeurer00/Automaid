@@ -9,7 +9,7 @@ class AutomationsController < ApplicationController
         @automation = Automation.new(automation_params)
         @automation.device = Device.find_by(id: params[:device_id])
         if @automation.save! 
-            redirect_to device_automations_path
+            redirect_to device_automation_path(@automation.device, @automation)
         else
             redirect_to new_device_automation_path
         end
@@ -21,15 +21,18 @@ class AutomationsController < ApplicationController
 
     def show
         @automation = Automation.find(params[:id])
+        @automation.device = Device.find_by(id: params[:device_id])
     end
 
     def edit
         @automation = Automation.find(params[:id])
+        @automation.device = Device.find_by(id: params[:device_id])
     end
 
     def update 
         @automation = Automation.find(params[:id])
         @automation.update(automation_params)
+        @automation.device = Device.find_by(id: params[:device_id])
 
         if @automation.valid?
             redirect_to edit_device_automation_path(@automation)

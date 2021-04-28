@@ -22,6 +22,6 @@ Rails.application.routes.draw do
     resources :rooms
   end
   
-  resources :devices, :users, :rooms, :automations
+  resources :devices, :users, :rooms
   
 end

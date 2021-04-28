@@ -4,3 +4,5 @@
 <p> Description: <%= @device.description %> </p>
 <p> Brand: <%= @device.brand %> </p>
 <p> Quantity: <%= @device.quantity %> </p>
+
+<%= link_to 'Create Automation', new_device_automation_path(@device) %>

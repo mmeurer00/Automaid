@@ -1,6 +1,11 @@
 <h1> <%= @room.name %> </h1>
 <p> Indoor: <%= @room.indoor %> </p>
 <p> Outdoor: <%= @room.outdoor %> </p>
-<% @room.devices.each do |device|%>
-    <p> <%= link_to device.name, device_path(device)%> </p>
+<% if !@room.automations.nil? %>
+<% @room.automations.each do |automation|%>
+    <% next if automation.device_id.nil? %>
+    <p> <%= link_to automation.name,  device_automation_path(automation.device_id, automation)%> </p>
     <% end %>
+<% else %>
+<p> This room has no devices. </p>
+<% end %>

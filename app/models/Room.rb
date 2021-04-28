@@ -4,5 +4,6 @@ class Room < ApplicationRecord
     has_many :devices, through: :automations
 
     validates :name, presence: true
+
     
 end
