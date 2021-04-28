@@ -1,21 +1,19 @@
 class DevicesController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     def index
-        @devices = Device.all
+        @devices = current_user.devices
     end
 
     def show
-        @device = Device.find_by(id: params[:id])
+        @device = current_user.devices.find(params[:id])
     end
 
     def new
-        @device = Device.new
-        @user = current_user
+        @device = current_user.devices.build
     end
 
     def create
-        @device = Device.new(device_params)
-        @device.user = current_user
+        @device = current_user.devices.new(device_params)
         if @device.save!
             redirect_to device_path(@device)
         else
@@ -24,11 +22,11 @@ class DevicesController < ApplicationController
     end
 
     def edit
-        @device = Device.find_by(id: params[:id])
+        @device = current_user.devices.find(params[:id])
     end
 
     def update 
-        @device = Device.find_by(id: params[:id])
+        @device = current_user.devices.find(params[:id])
         @device.update(device_params)
 
         if @device.valid?
@@ -39,7 +37,7 @@ class DevicesController < ApplicationController
     end
 
     def destroy
-        @device = Device.find_by(id: params[:id])
+        @device = current_user.devices.find(params[:id])
         @device.destroy
         redirect_to devices_path
     end

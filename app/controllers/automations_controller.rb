@@ -1,12 +1,12 @@
 class AutomationsController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     def new
-        @automation = Automation.new
+        @automation = current_user.automations.build
         @device = Device.find_by(id: params[:id])
     end
 
     def create
-        @automation = Automation.new(automation_params)
+        @automation = current_user.automations.new(automation_params)
         @automation.device = Device.find_by(id: params[:device_id])
         if @automation.save! 
             redirect_to device_automation_path(@automation.device, @automation)
@@ -16,21 +16,21 @@ class AutomationsController < ApplicationController
     end
 
     def index
-        @automations = Automation.all
+        @automations = current_user.automations.all
     end
 
     def show
-        @automation = Automation.find(params[:id])
+        @automation = current_user.automations.find(params[:id])
         @automation.device = Device.find_by(id: params[:device_id])
     end
 
     def edit
-        @automation = Automation.find(params[:id])
+        @automation = current_user.automations.find(params[:id])
         @automation.device = Device.find_by(id: params[:device_id])
     end
 
     def update 
-        @automation = Automation.find(params[:id])
+        @automation = current_user.automations.find(params[:id])
         @automation.update(automation_params)
         @automation.device = Device.find_by(id: params[:device_id])
 
@@ -42,7 +42,7 @@ class AutomationsController < ApplicationController
     end
 
     def destroy
-        @automation = Automation.find(params[:id])
+        @automation = current_user.automations.find(params[:id])
         @automation.destroy
         redirect_to device_automations_path
     end
