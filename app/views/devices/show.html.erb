@@ -4,5 +4,10 @@
 <p> Description: <%= @device.description %> </p>
 <p> Brand: <%= @device.brand %> </p>
 <p> Quantity: <%= @device.quantity %> </p>
-
-<%= link_to 'Create Automation', new_device_automation_path(@device) %>
+<h3> Automations for <%= @device.name %> </h3>
+<% @device.automations.each do |automation| %> 
+    <%= link_to automation.name, device_automation_path(@device, automation)%>
+    <br>
+<%end %>
+<br>
+<%= link_to 'Create New Automation', new_device_automation_path(@device) %>
