@@ -1,5 +1,13 @@
 <h1> Devices </h1>
-<% @devices.each do |device| %>
-   <h4> <%= link_to device.name, device_path(device)%> </h4>
-    <br>
-<% end%>
+<% if !@devices.empty? %>
+    <% @devices.each do |device| %>
+    <h4> <%= link_to device.name, device_path(device)%> </h4>
+        <br>
+    <% end%>
+<% else %>
+        <p> You currently have no devices! Create your first 
+        <%= link_to 'Device', new_device_path %>. </p>
+<% end %>
+<br>
+<%= link_to 'Rooms', rooms_path %> </p>
+

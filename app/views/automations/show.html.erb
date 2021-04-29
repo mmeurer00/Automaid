@@ -3,5 +3,6 @@
 <p> Then Action: <%= @automation.then_action %> </p>
 <p> Device Name: <%= @automation.device.name %> </p>
 </ul>
-<%= link_to "Back to #{@automation.room.name} Automations", room_path(@automation.room_id) %><br>
+<%= link_to "All #{@automation.room.name} Automations", room_path(@automation.room_id) %><br>
 <%= link_to 'All Automations', device_automations_path %>
+<%= link_to "Back to #{@device.name}", device_path(@device) %>

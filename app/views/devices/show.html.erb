@@ -5,9 +5,15 @@
 <p> Brand: <%= @device.brand %> </p>
 <p> Quantity: <%= @device.quantity %> </p>
 <h3> Automations for <%= @device.name %> </h3>
-<% @device.automations.each do |automation| %> 
-    <%= link_to automation.name, device_automation_path(@device, automation)%>
-    <br>
-<%end %>
+<% if !@device.automations.empty? %>
+    <% @device.automations.each do |automation| %> 
+        <%= link_to automation.name, device_automation_path(@device, automation)%>
+        <br>
+    <%end %>
+<% else %>
+    <p> You currently have no automations for this device. </p>
+<% end %>
 <br>
-<%= link_to 'Create New Automation', new_device_automation_path(@device) %>
+<%= link_to 'New Automation', new_device_automation_path(@device) %>
+<br>
+<%= link_to 'All Devices', devices_path %>
