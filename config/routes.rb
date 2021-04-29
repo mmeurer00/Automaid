@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   
   delete '/logout', to: 'sessions#logout'
 
-  get '/automations/new', to: 'automations#new'
-  post '/automations/create', to: 'automations#create'
+  get '/automations', to: 'automations#all'
 
   root('static#home')
 

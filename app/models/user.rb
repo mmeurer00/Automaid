@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :rooms
   has_many :devices
+  has_many :automations, through: :devices
 
   validates :name, :email, :password, presence: true
   validates :email, uniqueness: true

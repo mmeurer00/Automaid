@@ -23,6 +23,10 @@ class AutomationsController < ApplicationController
         @automations = device.automations.all
     end
 
+    def all
+        @automations = current_user.automations.all
+    end
+
     def show
         @device = current_user.devices.find_by(id: params[:device_id])
         device = current_user.devices.find_by(id: params[:device_id])

@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
     end
 
     def create
-        @user = User.find_by(params[:email])
-            if !!@user && @user.authenticate(user_params)
+        @user = User.find_by(email: params[:user][:email])
+            if !!@user && @user.authenticate(params[:user][:password])
                 session[:user_id] = @user.id
                 redirect_to rooms_path
             else
