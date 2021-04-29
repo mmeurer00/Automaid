@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   
-  
   delete '/logout', to: 'sessions#logout'
 
-  get '/automations', to: 'automations#all'
+  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
+  
 
   root('static#home')
 
+  get '/automations', to: 'automations#all'
   resources :devices do
     resources :automations
   end

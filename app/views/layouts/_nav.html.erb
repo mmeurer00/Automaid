@@ -61,7 +61,7 @@ body {
   <%= link_to 'Create Device', new_device_path %>
   <%= link_to 'Automations', automations_path %>
   <br>
-  <center> <%= (button_to 'Logout', logout_path, class: 'nav-link active', method: 'delete') if logged_in? %></center>
+  <center> <%= (button_to 'Logout', logout_path, class: 'nav-link active', method: :delete) if logged_in? %></center>
 </div>
 
 <div id="main">
