@@ -1,3 +1,10 @@
+<% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+        <%= msg %>
+        <%= render partial: 'errors/errors', locals: {model: @user} %>
+    </div>
+<% end %>
+
 <h1> Sign Up </h1>
 <%= form_with(model: @user, url: signup_path)  do |f|%>
     <%= f.label :name %>
@@ -8,7 +15,9 @@
     <%= f.password_field :password %><br>
     <%= f.submit "Sign Up" %>
 <% end %>
-
-<h3> Login with Google Instead. </h3>
+<br>
+<p> Sign up with Google Instead. 
 <!----- making post request instead of get because we are using csrf protection ----->
-<%= button_to 'Google Login', '/auth/google_oauth2' %>
+<%= button_to 'Google Sign up', '/auth/google_oauth2' %> </p>
+
+<p> Have an account? <%= link_to 'Login.', login_path %> </p> 

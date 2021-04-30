@@ -15,9 +15,10 @@ class RoomsController < ApplicationController
 
     def create
         @room = current_user.rooms.new(room_params)
-        if @room.save
+        if @room.valid?
             redirect_to room_path(@room)
         else
+            flash.now[:notice] = "Room DID NOT save: "
             render :new
         end
     end

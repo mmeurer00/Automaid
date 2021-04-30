@@ -1,3 +1,10 @@
+<% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+        <%= msg %>
+        <%= render partial: 'errors/errors', locals: {model: @room} %>
+    </div>
+<% end %>
+
 <h1> New Room </h1>
 <%= form_for(@room) do |f| %>
     <%= f.label :name %>

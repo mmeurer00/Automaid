@@ -1,0 +1,11 @@
+
+<% if model.errors.any? %>
+<div id="error_explanation">
+  <%= pluralize(model.errors.count, "error") %> 
+  <ul>
+    <% model.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

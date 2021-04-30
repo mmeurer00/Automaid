@@ -56,9 +56,9 @@ body {
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <%= link_to 'Rooms', rooms_path %>
+  <%= link_to 'My Home', rooms_path %>
   <%= link_to 'Devices', devices_path %>
-  <%= link_to 'Create Device', new_device_path %>
+  <%= link_to 'Create New Device', new_device_path %>
   <%= link_to 'Automations', automations_path %>
   <br>
   <center> <%= (button_to 'Logout', logout_path, class: 'nav-link active', method: :delete) if logged_in? %></center>

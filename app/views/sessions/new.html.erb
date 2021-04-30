@@ -1,5 +1,11 @@
 <h1> LogIn </h1>
 
+<% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+<% end %>
+
 <%= form_with(scope: :user, url: login_path)  do |f|%>
     <%= f.label :email %>
     <%= f.text_field :email %><br>
@@ -7,7 +13,8 @@
     <%= f.password_field :password %><br>
     <%= f.submit "Sign In" %>
 <% end %>
-
-<h3> Login with Google Instead. </h3> 
+<br>
+<p> Login with Google Instead.
 <!----- making post request instead of get because we are using csrf protection ----->
-<%= button_to 'Google Login', '/auth/google_oauth2' %>
+<%= button_to 'Google Login', '/auth/google_oauth2' %> </p> 
+<p> Don't have an account? <%= link_to 'Signup', signup_path %> </p>

@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
                 session[:user_id] = @user.id
                 redirect_to rooms_path
             else
+                flash.now[:notice] = "Email or password is incorrect."
                 render :new
             end
     end
@@ -33,7 +34,7 @@ class SessionsController < ApplicationController
             u.email = request.env['omniauth.auth'][:info][:email]
             u.password = SecureRandom.hex(10)
         end
-       
+        
         if user.valid?
             session[:user_id] = user.id
             redirect_to rooms_path
