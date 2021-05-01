@@ -1,3 +1,9 @@
+<% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+        <%= msg %>
+        <%= render partial: 'errors/errors', locals: {model: @automation} %>
+    </div>
+<% end %>
 <center>
 <div class="card" style="width: 30rem;">
 <div class="card-body">

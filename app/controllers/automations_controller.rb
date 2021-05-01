@@ -10,10 +10,11 @@ class AutomationsController < ApplicationController
         device = current_user.devices.find_by(id: params[:device_id])
         @automation = device.automations.new(automation_params)
         @automation.device = Device.find_by(id: params[:device_id])
-        if @automation.save! 
+        if @automation.valid? 
             redirect_to device_automation_path(@automation.device, @automation)
         else
             redirect_to new_device_automation_path
+            flash.now[:notice] = "Automation DID NOT save: "
         end
     end
 
