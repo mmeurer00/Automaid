@@ -12,7 +12,7 @@
     <%= f.label :name %>
     <%= f.text_field :name %><br>
     <%= f.label :if_action %>
-    <%= f.text_field :if_action %><br>
+    <%= f.collection_select :if_action, @times, :to_s, :to_s, include_blank: false %><br>
     <%= f.label :then_action %>
     <%= f.text_field :then_action %><br>
     <%= f.label :room_name %>
