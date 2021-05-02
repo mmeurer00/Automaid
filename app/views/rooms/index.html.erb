@@ -1,18 +1,21 @@
 <center>
 <h1> My Home </h1>
-<p> hello <%= current_user.name %> </p>
 
-<% @rooms.each do |room| %>
-    <div class="card" style="width: 30rem;">
-    <div class="card-body">
-    <%= link_to room.name, room_path(room)%>
-    </div>
-    </div>
-    <br>
-<% end%>
-<br>
-
+<% if !@rooms.empty? %>
 <%= link_to 'New Room', new_room_path%>
 <br>
 <br>
+    <% @rooms.each do |room| %>
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+        <%= link_to room.name, room_path(room)%>
+        </div>
+        </div>
+        <br>
+    <% end%>
+<% else %>
+    <div class="card" style="width: 30rem;">
+    <div class="card-body">
+    <p> You currently have no rooms. Create your first <%= link_to 'Room', new_room_path%>.</p>
+<% end %>
 </center>
