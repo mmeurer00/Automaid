@@ -14,7 +14,7 @@ class DevicesController < ApplicationController
 
     def create
         @device = current_user.devices.build(device_params)
-        if @device.valid?
+        if @device.save!
             redirect_to device_path(@device)
         else
             flash.now[:notice] = "Device DID NOT save: "

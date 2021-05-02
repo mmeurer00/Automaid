@@ -9,13 +9,13 @@
 <div class="card-body">
 <h1>New Automation</h1>
 <%= form_with(model: [:device, @automation]) do |f| %>
-    <%= f.label :name %>
+    <%= f.label "Name:" %>
     <%= f.text_field :name %><br>
-    <%= f.label :if_action %>
+    <%= f.label "Start Time:" %>
     <%= f.collection_select :if_action, @times, :to_s, :to_s, include_blank: false %><br>
-    <%= f.label :then_action %>
+    <%= f.label "Action: "%>
     <%= f.text_field :then_action %><br>
-    <%= f.label :room_name %>
+    <%= f.label "Room:" %>
     <%= f.text_field :room_name %><br>
     <%= f.submit 'Create Automation' %>
 <% end %>
