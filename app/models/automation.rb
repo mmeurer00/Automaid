@@ -3,7 +3,8 @@ class Automation < ApplicationRecord
     belongs_to :device
     has_one :user, through: :device
 
-    validates :name, :if_action, :then_action, presence: true
+    validates :name, :if_action, :then_action, :room_name, presence: true 
+
 
     def room_name
         self.try(:room).try(:name)

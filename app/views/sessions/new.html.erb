@@ -1,20 +1,27 @@
-<h1> LogIn </h1>
+
 
 <% flash.each do |type, msg| %>
     <div class="alert alert-info">
       <%= msg %>
     </div>
 <% end %>
-
+<center>
+<div class="card-body">
+<div class="card" style="width: 30rem;">
+<h3 class="card-title">Login </h3>
 <%= form_with(scope: :user, url: login_path)  do |f|%>
-    <%= f.label :email %>
+    <%= f.label "Email:" %>
     <%= f.text_field :email %><br>
-    <%= f.label :password %>
+    <%= f.label "Password:" %>
     <%= f.password_field :password %><br>
-    <%= f.submit "Sign In" %>
+    <%= f.submit "Login" %>
 <% end %>
 <br>
-<p> Login with Google Instead.
+<p> Or Login with Google Instead.
 <!----- making post request instead of get because we are using csrf protection ----->
 <%= button_to 'Google Login', '/auth/google_oauth2' %> </p> 
+<br>
+</div>
+</div>
 <p> Don't have an account? <%= link_to 'Signup', signup_path %> </p>
+</center>
