@@ -1,4 +1,6 @@
+<center>
 <h1> Devices </h1>
+<br>
 <% if !@devices.empty? %>
     <% @devices.each do |device| %>
         <center>
@@ -11,9 +13,11 @@
         </center>
     <% end%>
 <% else %>
+    <div class="card" style="width: 30rem;">
+    <div class="card-body">
         <p> You currently have no devices! Create your first 
         <%= link_to 'Device', new_device_path %>. </p>
+    </div>
+    </div>
 <% end %>
-<br>
-<%= link_to 'Rooms', rooms_path %> </p>
-
+</center>
