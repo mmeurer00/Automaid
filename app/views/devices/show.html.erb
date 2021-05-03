@@ -1,21 +1,22 @@
 <center>    
-    <h1> <%= @device.name %> </h1>
     <div class="card" style="width: 30rem;">
     <div class="card-body">
+        <h1> <%= @device.name %> </h1>
         <p> Model: <%= @device.model %> </p>
         <p> Description: <%= @device.description %> </p>
         <p> Brand: <%= @device.brand %> </p>
         <p> Quantity: <%= @device.quantity %> </p>
-        <%= link_to "Edit", edit_device_path(@device)%> 
-        <%= link_to "Delete", device_path(@device), method: "DELETE"%>
+        <%= link_to "Edit", edit_device_path(@device)%>
+        <br>
+        <%= button_to "Delete", device_path(@device), method: "delete"%>
     </div>
     </div>
     <br>
-    <h4> Automations for <%= @device.name %> </h4>
     <% if !@device.automations.empty? %>
     <%= link_to 'New Automation', new_device_automation_path(@device) %>
     <br>
     <br>
+    <h4> Automations for <%= @device.name %> </h4>
         <% @device.automations.each do |automation| %> 
             <div class="card" style="width: 20rem;">
             <div class="card-body">

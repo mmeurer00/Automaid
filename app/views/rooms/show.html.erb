@@ -6,7 +6,8 @@
             <p> Outdoor </p>
         <% end %>
     <h5><%= link_to "Edit", edit_room_path(@room)%><br>
-    <%= link_to "Delete", room_path(@room), method: "DELETE"%></h5>
+    <%= button_to "Delete", room_path(@room), method: "delete"%></h5>
+    
     <br>
     <br>
     <% if !@room.automations.empty? %>
