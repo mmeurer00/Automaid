@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#logout'
 
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
-  get '/search', to: 'devices#search', as: 'search'  
+  get '/search', to: 'devices#search', as: 'search' 
+  get '/filter_by_location', to: 'rooms#filter_by_location'   
 
   root('static#home')
 

@@ -1,6 +1,11 @@
 class RoomsController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
     
+    def filter_by_location
+       @rooms = current_user.rooms.filter_by_location(@rooms)
+    end
+
+
     def index  
         @rooms = current_user.rooms
     end

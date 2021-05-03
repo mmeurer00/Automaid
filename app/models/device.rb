@@ -4,6 +4,5 @@ class Device < ApplicationRecord
     has_many :rooms, through: :automations
 
     validates :name, :brand, :description, :quantity, presence: true
-    
-    scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }
+    scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%").length > 0 }
 end

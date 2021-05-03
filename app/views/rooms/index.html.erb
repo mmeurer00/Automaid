@@ -3,6 +3,7 @@
 
 <% if !@rooms.empty? %>
 <%= link_to 'Create New Living Space', new_room_path%>
+<%= link_to 'Indoor Living Spaces', filter_by_location_path, class: 'nav-link active' %>
 <br>
 <br>
     <% @rooms.each do |room| %>
