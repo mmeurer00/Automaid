@@ -1,14 +1,20 @@
-<h1>Update Automation</h1>
-<%= form_with(model: [:device, @automation]) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-    <%= f.label :if_action %>
-    <%= f.text_field :if_action %><br>
-    <%= f.label :then_action %>
-    <%= f.text_field :then_action %><br>
-    <%= f.label :room_name %>
-    <%= f.text_field :room_name %><br>
-    <%= f.submit 'Update Automation' %>
-<% end %>
-<br>
-<%= button_to "DELETE AUTOMATION", device_automation_path(@automation), method: "delete" %>
+<center>
+    <div class="card" style="width: 30rem;">
+    <div class="card-body">
+        <h1>Update Automation</h1>
+        <%= form_with(model: [:device, @automation])  do |f| %>
+        <%= f.label "Name:" %>
+        <%= f.text_field :name %><br>
+        <%= f.label "Start Time:" %>
+        <%= f.collection_select :if_action, time_options, :to_s, :to_s, prompt: true %><br>
+        <%= f.label "Action: "%>
+        <%= f.text_field :then_action %><br>
+        <%= f.label "Room:" %>
+        <%= f.collection_select :room_id, current_user.rooms.all, :id, :name, prompt: true %><br>
+        <%= f.submit 'Update Automation' %>
+        <% end %>
+        <br>
+        <%= button_to "DELETE AUTOMATION", device_automation_path(@automation.device, @automation), method: "delete" %>
+    </div>
+    </div>
+    </center>

@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
     end
 
     def show
-        @room = current_user.rooms.find(params[:id])
+        @room = current_user.rooms.find_by(id: params[:id])
     end
 
     def new

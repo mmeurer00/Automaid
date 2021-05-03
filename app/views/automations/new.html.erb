@@ -12,11 +12,11 @@
     <%= f.label "Name:" %>
     <%= f.text_field :name %><br>
     <%= f.label "Start Time:" %>
-    <%= f.collection_select :if_action, @times, :to_s, :to_s, include_blank: false %><br>
+    <%= f.collection_select :if_action, time_options, :to_s, :to_s, prompt: true %><br>
     <%= f.label "Action: "%>
     <%= f.text_field :then_action %><br>
     <%= f.label "Room:" %>
-    <%= f.text_field :room_name %><br>
+    <%= f.collection_select :room_id, current_user.rooms.all, :id, :name, prompt: true %><br>
     <%= f.submit 'Create Automation' %>
 <% end %>
 </div>

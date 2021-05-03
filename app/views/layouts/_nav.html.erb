@@ -55,6 +55,10 @@ body {
 <body>
 
 <div id="mySidenav" class="sidenav">
+  <%= form_with(url: search_path, method: 'get', class: 'd-flex') do |f|%>
+    <%= f.text_field :device, class: "form-control me-2", placeholder: "Search for Device" %>
+    <%= f.submit :Search, class: "btn btn-outline-success" %>
+  <% end %>
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <%= link_to 'My Home', rooms_path %>
   <%= link_to 'Devices', devices_path %>

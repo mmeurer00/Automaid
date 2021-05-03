@@ -1,5 +1,12 @@
 class DevicesController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
+    
+    def search
+        @devices = current_user.devices.search(params[:name])
+        render :index
+    end
+
+    
     def index
         @devices = current_user.devices
     end
