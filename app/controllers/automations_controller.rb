@@ -1,5 +1,5 @@
 class AutomationsController < ApplicationController
-    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
+    before_action :redirect_if_not_logged_in, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
     def new
         device = current_user.devices.find_by(id: params[:device_id])
@@ -58,10 +58,9 @@ class AutomationsController < ApplicationController
     end
 
     def destroy
-        @device = Device.find_by(id: params[:device_id])
-        @automation = current_user.automations.find_by(id: params[:id])
+        @automation = Automation.find_by(id: params[:id])
         @automation.destroy
-        redirect_to device_automations_path(@device)
+        redirect_to device_automations_path
     end
 
     private

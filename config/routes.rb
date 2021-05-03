@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :devices do
     resources :automations
   end
+  
+  delete '/devices/:id/automations/:id', to: 'automations#destroy'
 
   resources :users do
     resources :rooms

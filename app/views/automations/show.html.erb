@@ -7,7 +7,7 @@
         <p> Device: <%= @automation.device.name %> </p>
         <br>
         <%= link_to "Edit", edit_device_automation_path(@automation.device, @automation)%><br>
-        <%= link_to "Delete", device_automation_path(@automation.device, @automation), method: "DELETE"%>
+        <%= button_to "DELETE AUTOMATION", device_automation_path(@automation.device, @automation), method: "delete" %>
         <br>
         <%= link_to "All #{@automation.room.name} Automations", room_path(@automation.room) %><br>
         <br>

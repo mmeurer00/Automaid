@@ -1,14 +1,20 @@
-<h1> <%= @device.name %> Automations Index </h1>
-<ul>
-<% @automations.each do |automation| %>
-    <center>
+<center>
+    <h1> <%= @device.name %> Automations </h1>
+    <% if !@automations.empty? %>
+        <% @automations.each do |automation| %>
+            <div class="card" style="width: 30rem;">
+            <div class="card-body">
+            <h4> <%= link_to automation.name,  device_automation_path(automation.device_id, automation) %> </h4>
+            </div>
+            </div>
+        <br>
+        <% end %>
+    <% else %>
+        <br>
         <div class="card" style="width: 30rem;">
         <div class="card-body">
-    <h4> <%= link_to automation.name,  device_automation_path(automation.device_id, automation) %> </h4>
-    </div>
-    </div>
-    </center>
-    <br>
-<% end %>
-<div class="btn" <%= link_to 'All Devices', devices_path %> /div>
-</ul>
+        <h4> There are currently no Automations for this device.  <%= link_to 'Create new automation', new_device_automation_path(@device) %>. </h4>
+        </div>
+        </div>
+    <% end %>
+</center>
