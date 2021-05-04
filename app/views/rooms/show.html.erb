@@ -1,13 +1,14 @@
 <center>
-    <h1> <%= @room.name %> </h1>
+    <div class= "custom-title">
+        <%= @room.name %>
+    </div>
         <% if @room.indoor == true %>
             <p> Indoor </p>
         <% else %>
             <p> Outdoor </p>
         <% end %>
-    <h5><%= link_to "Edit", edit_room_path(@room)%><br>
-    <%= button_to "Delete", room_path(@room), method: "delete"%></h5>
-    
+    <h5><%= link_to "Edit", edit_room_path(@room), style: "text-decoration:none"%><br>
+    <%= button_to "Delete", room_path(@room), method: "delete", style: "text-decoration:none"%></h5>
     <br>
     <br>
     <% if !@room.automations.empty? %>

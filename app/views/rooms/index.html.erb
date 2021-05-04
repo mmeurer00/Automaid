@@ -9,7 +9,7 @@
     <% @rooms.each do |room| %>
         <div class="card" style="width: 18rem;">
         <div class="card-body">
-        <%= link_to room.name, room_path(room)%>
+        <%= link_to(room.name, room_path(room), class: "btn btn-primary")%>
         </div>
         </div>
         <br>
