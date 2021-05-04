@@ -1,14 +1,19 @@
 <center>
-    <div class= "custom-title">
-        <%= @room.name %>
-    </div>
+<div class="fancy-text">
+    <div class="card" style="width: 20rem;">
+    <div class="card-body">
+        <div class= "custom-title">
+            <%= @room.name %>
+        </div>
         <% if @room.indoor == true %>
             <p> Indoor </p>
         <% else %>
             <p> Outdoor </p>
         <% end %>
-    <h5><%= link_to "Edit", edit_room_path(@room), style: "text-decoration:none"%><br>
-    <%= button_to "Delete", room_path(@room), method: "delete", style: "text-decoration:none"%></h5>
+        <%= link_to "Edit", edit_room_path(@room), style: "text-decoration:none"%>
+        <%= button_to "Delete", room_path(@room), method: "delete", style: "text-decoration:none"%>
+    </div>
+    </div>
     <br>
     <br>
     <% if !@room.automations.empty? %>
@@ -19,7 +24,7 @@
                 <p> <%= link_to automation.name,  device_automation_path(automation.device_id, automation)%> </p>
             </div>
             </div>
-            <% end %>
+        <% end %>
     <% else %>
         <div class="card-body">
         <div class="card" style="width: 30rem;">
@@ -29,4 +34,5 @@
         </div>
         </div>
     <% end %>
+</div>
 </center>

@@ -1,5 +1,64 @@
 .custom-title {
     font-family: Copperplate, Papyrus, fantasy;    
-    font-size: 50px;           
-    font-weight: bold;
+    font-size: 50px;     
+    color: rgb(40 31 28);      
+    
  }
+
+ .fancy-text{
+    font-family: Copperplate, Papyrus, fantasy;    
+    font-size: 20px;
+ }
+body {
+    margin: 0;
+    line-height: 1.5;
+    background-image: url("https://hotestatesales.com/wp-content/uploads/10.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent; 
+ }
+.sidenav {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color:#775b455e;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+}
+
+.sidenav a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: rgb(40 31 28);
+display: block;
+transition: 0.3s;
+}
+
+.sidenav a:hover {
+color: #c6c4c4;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+#main {
+transition: margin-left .5s;
+padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+.sidenav {padding-top: 15px;}
+.sidenav a {font-size: 18px;}
+}

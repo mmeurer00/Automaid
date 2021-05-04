@@ -2,8 +2,7 @@
 <div class= "custom-title"> My Home </div>
 
 <% if !@rooms.empty? %>
-<%= link_to('New Living Space', new_room_path, class: "btn btn-primary")%>
-<%= link_to('Indoor Rooms', filter_by_location_path, class: "btn btn-primary")%>
+<%= link_to('Indoor Rooms', filter_by_location_path, class: "btn btn-outline-light text-dark")%>
 <br>
 <br>
     <% @rooms.each do |room| %>
