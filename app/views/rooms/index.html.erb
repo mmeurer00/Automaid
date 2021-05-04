@@ -2,13 +2,13 @@
 <div class= "custom-title"> My Home </div>
 
 <% if !@rooms.empty? %>
-<%= link_to('Indoor Rooms', filter_by_location_path, class: "btn btn-outline-light text-dark")%>
+<%= link_to('Indoor Rooms', filter_by_location_path, class: "my-btn-sm")%>
 <br>
 <br>
     <% @rooms.each do |room| %>
-        <div class="card" style="width: 18rem;">
+        <div class="card-one" style="width: 18rem;">
         <div class="card-body">
-        <%= link_to(room.name, room_path(room), class: "btn btn-outline-light text-dark")%>
+        <%= link_to(room.name, room_path(room), class: "my-btn")%>
         </div>
         </div>
         <br>

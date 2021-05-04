@@ -1,13 +1,21 @@
 .custom-title {
     font-family: Copperplate, Papyrus, fantasy;    
     font-size: 50px;     
-    color: rgb(40 31 28);      
+    color: rgb(34, 31, 22);      
+    
+ }
+
+ .custom-title-sm {
+    font-family: Copperplate, Papyrus, fantasy;    
+    font-size: 30px;     
+    color: rgb(34, 31, 22);      
     
  }
 
  .fancy-text{
     font-family: Copperplate, Papyrus, fantasy;    
     font-size: 20px;
+    color: rgb(34, 31, 22);
  }
 body {
     margin: 0;
@@ -20,45 +28,79 @@ body {
     -webkit-tap-highlight-color: transparent; 
  }
 .sidenav {
-height: 100%;
-width: 0;
-position: fixed;
-z-index: 1;
-top: 0;
-left: 0;
-background-color:#775b455e;
-overflow-x: hidden;
-transition: 0.5s;
-padding-top: 60px;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#775b455e;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
 .sidenav a {
-padding: 8px 8px 8px 32px;
-text-decoration: none;
-font-size: 25px;
-color: rgb(40 31 28);
-display: block;
-transition: 0.3s;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(40 31 28);
+    display: block;
+    transition: 0.3s;
 }
 
 .sidenav a:hover {
-color: #c6c4c4;
+    color: #c6c4c4;
 }
 
 .sidenav .closebtn {
-position: absolute;
-top: 0;
-right: 25px;
-font-size: 36px;
-margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
 #main {
-transition: margin-left .5s;
-padding: 16px;
+    transition: margin-left .5s;
+    padding: 16px;
 }
 
 @media screen and (max-height: 450px) {
-.sidenav {padding-top: 15px;}
-.sidenav a {font-size: 18px;}
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.card-body {
+    background-color: #dccfcfa3
+}
+.card{
+    background-color: #775b4592;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.my-btn {
+    color: #344526;
+    font-family: Copperplate, Papyrus, fantasy;    
+    font-size: 40px;    
+    background-image: none;
+    border-color: #f8f9fa;
+}
+.my-btn-sm {
+    color: #344526;
+    font-family: Copperplate, Papyrus, fantasy;    
+    font-size: 25px;    
+    background-image: none;
+    border-color: #f8f9fa;
 }

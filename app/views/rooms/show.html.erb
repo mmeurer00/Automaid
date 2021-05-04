@@ -1,6 +1,6 @@
 <center>
 <div class="fancy-text">
-    <div class="card" style="width: 20rem;">
+    <div class="card-one" style="width: 20rem;">
     <div class="card-body">
         <div class= "custom-title">
             <%= @room.name %>
@@ -10,26 +10,29 @@
         <% else %>
             <p> Outdoor </p>
         <% end %>
-        <%= link_to "Edit", edit_room_path(@room), style: "text-decoration:none"%>
-        <%= button_to "Delete", room_path(@room), method: "delete", style: "text-decoration:none"%>
+        <%= link_to "Edit", edit_room_path(@room), class: "my-btn-sm"%>
+        <%= button_to "Delete", room_path(@room), method: "delete", class: "my-btn-sm"%>
     </div>
     </div>
     <br>
     <br>
     <% if !@room.automations.empty? %>
-        <h5> Automations for <%= @room.name %>: </h5>
+        <div class="card-one" style="width: 30rem;">
+        <div class="card-body">
+        <div class="custom-title-sm"> Automations for <%= @room.name %>: </div> </div> </div>
+        <br>
         <% @room.automations.each do |automation|%>
-            <div class="card" style="width: 20rem;">
+            <div class="card-one" style="width: 20rem;">
             <div class="card-body">
-                <p> <%= link_to automation.name,  device_automation_path(automation.device_id, automation)%> </p>
+                <p> <%= link_to automation.name,  device_automation_path(automation.device_id, automation),  class: "my-btn-sm"%> </p>
             </div>
             </div>
         <% end %>
     <% else %>
         <div class="card-body">
-        <div class="card" style="width: 30rem;">
+        <div class="card-one" style="width: 30rem;">
         <br>
-            <h5> Looks like this room has no automations! Select a device and <%= link_to "create new automation", devices_path %>. </h5>
+            <h5> Looks like this room has no automations! Select a device and <%= link_to "create new automation", devices_path, class: "my-btn-sm" %>. </h5>
         <br>
         </div>
         </div>
