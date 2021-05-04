@@ -1,15 +1,15 @@
 <center>
-<h1> My Home </h1>
+<div class= "custom-title"> My Home </div>
 
 <% if !@rooms.empty? %>
-<%= link_to 'Create New Living Space', new_room_path%>
-<%= link_to 'Indoor Living Spaces', filter_by_location_path, class: 'nav-link active' %>
+<%= link_to('New Living Space', new_room_path, class: "btn btn-primary")%>
+<%= link_to('Indoor Rooms', filter_by_location_path, class: "btn btn-primary")%>
 <br>
 <br>
     <% @rooms.each do |room| %>
         <div class="card" style="width: 18rem;">
         <div class="card-body">
-        <%= link_to(room.name, room_path(room), class: "btn btn-primary")%>
+        <%= link_to(room.name, room_path(room), class: "btn btn-outline-light text-dark")%>
         </div>
         </div>
         <br>
