@@ -29,7 +29,7 @@ user@Users-MacBook_Air Automaid %
 ```
 user@Users-MacBook_Air Automaid % bundle install
 
-user@Users-MacBook_Air Automaid % rake db:migrate
+user@Users-MacBook_Air Automaid % rails db:migrate
 ```
 
 7. Once inside Automaid run the program by typing 'shotgun' in your terminal:
