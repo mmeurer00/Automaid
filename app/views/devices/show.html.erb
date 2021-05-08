@@ -1,31 +1,37 @@
-<center>    
-    <div class="card" style="width: 30rem;">
+<center>
+<div class="fancy-text">    
+    <div class="card-one" style="width: 30rem;">
     <div class="card-body">
         <h1> <%= @device.name %> </h1>
         <p> Model: <%= @device.model %> </p>
         <p> Description: <%= @device.description %> </p>
         <p> Brand: <%= @device.brand %> </p>
         <p> Quantity: <%= @device.quantity %> </p>
-        <%= link_to "Edit", edit_device_path(@device)%>
+        <%= link_to "Edit", edit_device_path(@device), class: 'my-btn-sm'%>
         <br>
         <%= button_to "Delete", device_path(@device), method: "delete"%>
     </div>
     </div>
     <br>
     <% if !@device.automations.empty? %>
-    <%= link_to 'New Automation', new_device_automation_path(@device) %>
+    <%= link_to 'New Automation', new_device_automation_path(@device), class: 'my-btn-sm' %>
     <br>
     <br>
     <h4> Automations for <%= @device.name %> </h4>
         <% @device.automations.each do |automation| %> 
-            <div class="card" style="width: 20rem;">
+            <div class="card-one" style="width: 20rem;">
             <div class="card-body">
-            <%= link_to automation.name, device_automation_path(@device, automation)%>
+            <%= link_to automation.name, device_automation_path(@device, automation), class: 'my-btn-sm'%>
             </div>
             </div>
             <br>
         <%end %>
     <% else %>
-        <p> You currently have no automations. <%= link_to 'Create new automation', new_device_automation_path(@device) %> for this device.</p>
-    <% end %>   
+        <div class="card-one" style="width: 20rem;">
+        <div class="card-body">
+        <p> You currently have no automations. <%= link_to 'Create new automation', new_device_automation_path(@device), class: 'my-btn-sm' %> for this device.</p>
+            </div>
+            </div>
+        <% end %> 
+</div>  
 </center>
