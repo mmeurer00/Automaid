@@ -1,12 +1,15 @@
 <center>
+<div class="fancy-text">
 <h3> Indoor Living Spaces </h3>
-<%= link_to 'My Home', rooms_path, class: 'nav-link active' %>
+<br>
+<%= link_to 'All Living Spaces', rooms_path, class: 'my-btn-sm' %>
 <% @rooms.each do |room| %>
-    <div class="card" style="width: 18rem;">
+    <div class="card-one" style="width: 18rem;">
     <div class="card-body">
-    <%= link_to room.name, room_path(room)%>
+    <%= link_to room.name, room_path(room), class: 'my-btn-sm'%>
     </div>
     </div>
     <br>
 <% end%>
+</div>
 </center>
