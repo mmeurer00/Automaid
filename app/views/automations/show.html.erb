@@ -1,18 +1,20 @@
 <center>
-    <div class="card" style="width: 20rem;">
+<div class="fancy-text">
+    <div class="card-one" style="width: 20rem;">
     <div class="card-body">
         <h1> <%=@automation.name %> </h1>
         <p> Time: <%= @automation.if_action %> </p> 
         <p> Action: <%= @automation.then_action %> </p>
         <p> Device: <%= @automation.device.name %> </p>
         <br>
-        <%= link_to "Edit", edit_device_automation_path(@automation.device, @automation)%><br>
+        <%= link_to "Edit", edit_device_automation_path(@automation.device, @automation), class: 'my-btn-sm'%><br>
         <br>
         <%= button_to "DELETE AUTOMATION", device_automation_path(@automation.device, @automation), method: "delete" %>
         <br>
-        <%= link_to "All #{@automation.room.name} Automations", room_path(@automation.room) %><br>
+        <%= link_to "All #{@automation.room.name} Automations", room_path(@automation.room), class: 'my-btn-sm' %><br>
         <br>
-        <%= link_to "Back to #{@device.name}", device_path(@device) %>
+        <%= link_to "Back to #{@device.name}", device_path(@device), class: 'my-btn-sm' %>
     </div>
     </div>
+</div>
 </center>

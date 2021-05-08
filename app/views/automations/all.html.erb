@@ -1,11 +1,12 @@
 <center>
+<div class="fancy-text">
     <% if !@automations.empty? %>
     <h3> Automations for All Devices </h3>
     <br>
     <% @automations.each do |automation| %>
-        <div class="card" style="width: 20rem;">
+        <div class="card-one" style="width: 20rem;">
         <div class="card-body">
-        <h4> <%= link_to automation.name,  device_automation_path(automation.device_id, automation) %> </h4>
+        <h4> <%= link_to automation.name,  device_automation_path(automation.device_id, automation), class: 'my-btn-sm'%> </h4>
         </div>
         </div>
         <br>
@@ -13,4 +14,5 @@
     <% else %>
     <h5> There are currently no automations. <h5>
     <% end %>
+</div>
 </center>
