@@ -32,7 +32,7 @@ user@Users-MacBook_Air Automaid % bundle install
 user@Users-MacBook_Air Automaid % rails db:migrate
 ```
 
-7. Once inside Automaid run the program by typing 'shotgun' in your terminal:
+7. Once inside Automaid run the program by typing 'rails s' in your terminal:
 ```
 user@Users-MacBook_Air Automaid % rails s 
 ```
