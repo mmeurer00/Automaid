@@ -14,10 +14,15 @@
     </div>
     <br>
     <% if !@device.automations.empty? %>
+    <div class="card-one" style="width: 20rem;">
+    <div class="card-body">
     <%= link_to 'New Automation', new_device_automation_path(@device), class: 'my-btn-sm' %>
     <br>
     <br>
     <h4> Automations for <%= @device.name %> </h4>
+    </div>
+    </div>
+    <br>
         <% @device.automations.each do |automation| %> 
             <div class="card-one" style="width: 20rem;">
             <div class="card-body">

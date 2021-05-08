@@ -1,14 +1,24 @@
-<h1> New Device </h1>
-<%= form_for(@device) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
-    <%= f.label :brand %>
-    <%= f.text_field :brand %><br>
-    <%= f.label :model %>
-    <%= f.text_field :model %><br>
-    <%= f.label :description %>
-    <%= f.text_field :description %><br>
-    <%= f.label :quantity %>
-    <%= f.text_field :quantity %><br>
-    <%= f.submit 'Create Device' %>
-<% end %>
+<center>
+<div class="fancy-text">
+<div class="card-one" style="width: 30rem;">
+<div class="card-body">
+    <h1> Edit Device </h1>
+    <%= form_for(@device) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br>
+        <%= f.label :brand %>
+        <%= f.text_field :brand %><br>
+        <%= f.label :model %>
+        <%= f.text_field :model %><br>
+        <%= f.label :description %>
+        <%= f.text_field :description %><br>
+        <%= f.label :quantity %>
+        <%= f.text_field :quantity %><br>
+        <%= f.submit 'Edit Device' %>
+    <% end %>
+
+    <%= button_to "Delete", device_path(@device), method: "delete"%>
+</div>
+</div>
+</div>
+</center>

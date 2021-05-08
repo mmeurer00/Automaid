@@ -104,3 +104,19 @@ body {
     background-image: none;
     border-color: #f8f9fa;
 }
+.my-btn-sm {
+    color: #344526;
+    font-family: Copperplate, Papyrus, fantasy;    
+    font-size: 25px;    
+    background-image: none;
+    border-color: #f8f9fa;
+}
+
+.my-search-btn {
+    color: white;
+    background-color: #43d55948;
+    background-image: none;
+    border-color: #43d5597e;
+    border-radius: 8px;
+}
+
