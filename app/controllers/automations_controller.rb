@@ -13,12 +13,7 @@ class AutomationsController < ApplicationController
         @automation.device = Device.find_by(id: params[:device_id])
         #binding.pry
         if @automation.save
-            if !@automation.id
-                #flash.now[:notice] = "Automation DID NOT save. Fill in all fields."
-                render :new
-            else
             redirect_to device_automation_path(@automation.device, @automation)
-            end
         else
             flash.now[:notice] = "Automation DID NOT save. Fill in all fields. "
             render :new

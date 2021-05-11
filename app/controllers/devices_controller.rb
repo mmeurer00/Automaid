@@ -6,6 +6,11 @@ class DevicesController < ApplicationController
         render :index
     end
 
+    def order_by_quantity
+        @devices = Device.all.order(quantity: :desc)
+        
+    end
+
     
     def index
         @devices = current_user.devices
@@ -20,6 +25,7 @@ class DevicesController < ApplicationController
     end
 
     def create
+    
         @device = current_user.devices.build(device_params)
         if @device.save!
             redirect_to device_path(@device)

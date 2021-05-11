@@ -5,4 +5,6 @@ class Device < ApplicationRecord
 
     validates :name, :brand, :description, :quantity, presence: true
     scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }
+
+    
 end

@@ -6,6 +6,7 @@
     </div>
 <% end %>
 <center>
+<div class='fancy-text'>
 <div class="card-body">
 <div class="card" style="width: 30rem;">
 <h3 class="card-title">Login </h3>
@@ -21,7 +22,8 @@
 <!----- making post request instead of get because we are using csrf protection ----->
 <%= button_to 'Google Login', '/auth/google_oauth2' %> </p> 
 <br>
+ Don't have an account? <%= link_to 'Signup', signup_path, class: 'my-btn-sm' %> 
 </div>
 </div>
-<p> Don't have an account? <%= link_to 'Signup', signup_path %> </p>
+</div>
 </center>

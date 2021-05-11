@@ -1,0 +1,8 @@
+<h1> Devices </h1>
+<ul>
+<% @devices.each do |device| %>
+    <li>
+    <%= device.name %> - <%= device.quantity %>
+    </li>
+<% end %>
+</ul>

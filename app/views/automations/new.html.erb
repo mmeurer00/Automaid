@@ -8,6 +8,7 @@
 <div class="fancy-text">
 <div class="card-one" style="width: 30rem;">
 <div class="card-body">
+
 <h1>New Automation</h1>
 <%= form_with(model: [:device, @automation]) do |f| %>
     <%= f.label "Name:" %>
@@ -20,6 +21,7 @@
     <%= f.collection_select :room_id, current_user.rooms.all, :id, :name, prompt: true %><br>
     <%= f.submit 'Create Automation' %>
 <% end %>
+
 </div>
 </div>
 </div>
