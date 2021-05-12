@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
   get '/search', to: 'devices#search', as: 'search' 
-  get '/devices/order_by_quantity', to: 'devices#order_by_quantity'
 
   get '/filter_by_location', to: 'rooms#filter_by_location'   
 

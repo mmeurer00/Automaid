@@ -6,11 +6,6 @@ class DevicesController < ApplicationController
         render :index
     end
 
-    def order_by_quantity
-        @devices = Device.all.order(quantity: :desc)
-        
-    end
-
     
     def index
         @devices = current_user.devices
