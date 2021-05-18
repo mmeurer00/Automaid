@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to rooms_path
         else
-            flash[:message] = "The following errors prevented sign up:"
+            #flash[:message] = "The following errors prevented sign up:"
             render :new
         end
     end

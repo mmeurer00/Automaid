@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :rooms
   end
+
+  resources :rooms
   
 
   get '/404', to: "errors#not_found"
